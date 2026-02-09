@@ -1,6 +1,6 @@
 # OP_Scribe -- On-chain Proof of File Existence
 
-OP_Scribe is a three-layer application built on OPNet (Bitcoin L1) that provides
+OP_Scribe is a three-layer application built on Bitcoin Layer 1 via OP_NET that provides
 cryptographic proof of file existence by storing IPFS content identifiers (CIDs)
 on-chain with associated metadata.
 
@@ -18,7 +18,7 @@ on-chain with associated metadata.
          (HTTP POST)     (via OPWallet)
                 │              │
 ┌───────────────▼──────┐  ┌───▼───────────────────┐
-│  Backend (Node.js)   │  │  OPNet Smart Contract  │
+│  Backend (Node.js)   │  │  OP_NET Smart Contract  │
 │  - Pinata IPFS API   │  │  - registerFile()      │
 │  - File validation   │  │  - getFile()           │
 │  - CID return        │  │  - checkFileExists()   │
@@ -32,7 +32,7 @@ on-chain with associated metadata.
 
 ```
 op-scribe/
-├── contract/           # OPNet smart contract (AssemblyScript -> WASM)
+├── contract/           # OP_NET smart contract (AssemblyScript -> WASM)
 │   ├── src/
 │   │   ├── index.ts        # Entry point with factory + abort handler
 │   │   └── OPScribe.ts     # Contract implementation
@@ -135,7 +135,7 @@ npm run dev
 2. Frontend sends file to backend via POST /upload
 3. Backend pins file to Pinata IPFS, returns CID + metadata
 4. Frontend calls registerFile(cid, fileName, fileSize) via OPWallet
-5. User signs the OPNet transaction in their wallet
+5. User signs the OP_NET transaction in their wallet
 6. Contract stores the proof on Bitcoin L1
 7. Anyone can verify the proof using the Verify page
 
@@ -176,7 +176,7 @@ npm run dev
 - Backend: Node.js + Pinata SDK (TypeScript)
 - Frontend: Vite + React + TypeScript
 - Wallet: @btc-vision/walletconnect (OPWallet)
-- Network: OPNet regtest (regtest.opnet.org)
+- Network: OP_NET regtest (regtest.opnet.org)
 
 ## License
 
