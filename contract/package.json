@@ -1,0 +1,20 @@
+{
+    "name": "op-scribe-contract",
+    "version": "1.0.0",
+    "description": "OP_Scribe - On-chain proof of file existence for OPNet",
+    "scripts": {
+        "build": "asc src/index.ts --config asconfig.json --target debug",
+        "clean": "rm -rf build/*"
+    },
+    "dependencies": {
+        "@btc-vision/as-bignum": "0.1.2",
+        "@btc-vision/btc-runtime": "1.11.0-rc.4"
+    },
+    "devDependencies": {
+        "@btc-vision/assemblyscript": "latest",
+        "@btc-vision/opnet-transform": "1.0.6"
+    },
+    "overrides": {
+        "@noble/hashes": "2.0.1"
+    }
+}

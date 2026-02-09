@@ -1,0 +1,182 @@
+{
+    "functions": [
+        {
+            "name": "registerFile",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [
+                {
+                    "name": "cid",
+                    "type": "STRING"
+                },
+                {
+                    "name": "fileName",
+                    "type": "STRING"
+                },
+                {
+                    "name": "fileSize",
+                    "type": "UINT256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "success",
+                    "type": "BOOL"
+                }
+            ]
+        },
+        {
+            "name": "getFile",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [
+                {
+                    "name": "cid",
+                    "type": "STRING"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "fileName",
+                    "type": "STRING"
+                },
+                {
+                    "name": "fileSize",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "uploader",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "blockNumber",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "exists",
+                    "type": "BOOL"
+                }
+            ]
+        },
+        {
+            "name": "checkFileExists",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [
+                {
+                    "name": "cid",
+                    "type": "STRING"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "exists",
+                    "type": "BOOL"
+                }
+            ]
+        },
+        {
+            "name": "getTotalFiles",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "count",
+                    "type": "UINT256"
+                }
+            ]
+        },
+        {
+            "name": "getFileByIndex",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [
+                {
+                    "name": "index",
+                    "type": "UINT256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "cid",
+                    "type": "STRING"
+                },
+                {
+                    "name": "fileName",
+                    "type": "STRING"
+                },
+                {
+                    "name": "fileSize",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "uploader",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "blockNumber",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "UINT256"
+                }
+            ]
+        },
+        {
+            "name": "pause",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [],
+            "outputs": []
+        },
+        {
+            "name": "unpause",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [],
+            "outputs": []
+        },
+        {
+            "name": "getIsPaused",
+            "type": "Function",
+            "payable": false,
+            "onlyOwner": false,
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "isPaused",
+                    "type": "BOOL"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "name": "FileRegistered",
+            "values": [
+                {
+                    "name": "fileSize",
+                    "type": "UINT256"
+                },
+                {
+                    "name": "uploader",
+                    "type": "ADDRESS"
+                }
+            ],
+            "type": "Event"
+        }
+    ]
+}
